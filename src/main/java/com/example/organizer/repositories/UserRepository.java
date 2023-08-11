@@ -1,7 +1,14 @@
 package com.example.organizer.repositories;
 
-import com.example.organizer.daos.UserDAO;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import com.example.organizer.entities.User;
 
-public interface UserRepository extends MongoRepository<UserDAO, String> {
+import java.util.Optional;
+
+public interface UserRepository {
+Optional<User> get(String id);
+void save(User user);
+void remove(User user);
+
+
+
 }

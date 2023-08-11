@@ -1,19 +1,12 @@
 package com.example.organizer.daos;
 
-import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
+import com.example.organizer.entities.User;
+import org.springframework.data.repository.ListCrudRepository;
 
-@Data
-@Document("user")
-public class UserDAO {
-    @Id
-    private String userID;
+import java.util.List;
+import java.util.Optional;
 
-    @Indexed(unique = true)
-    private String email;
+public interface UserDAO extends ListCrudRepository<User, String> {
 
-    private String name;
-    private String role;
+
 }
