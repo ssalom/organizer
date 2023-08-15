@@ -2,9 +2,11 @@ package com.example.organizer.repositories;
 
 import com.example.organizer.daos.UserDAO;
 import com.example.organizer.entities.User;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+@Repository
 public class UserRepositoryImpl implements UserRepository {
 
     private final UserDAO userDAO;
@@ -26,5 +28,9 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public void remove(User user) {
         userDAO.delete(user);
+    }
+
+    public Boolean existsByEmail(String email) {
+            return userDAO.existsByEmail(email);
     }
 }

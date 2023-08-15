@@ -9,6 +9,6 @@ Optional<User> get(String id);
 void save(User user);
 void remove(User user);
 
-
+Boolean existsByEmail(String email);
 
 }
