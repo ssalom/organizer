@@ -5,11 +5,11 @@ import com.example.organizer.repositoriesImpl.OrganizerRepositoryImpl;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
+public class OrganizerService {
 
     private final OrganizerRepositoryImpl organizerRepositoryImpl;
 
-    public UserService(OrganizerRepositoryImpl organizerRepositoryImpl) {
+    public OrganizerService(OrganizerRepositoryImpl organizerRepositoryImpl) {
         this.organizerRepositoryImpl = organizerRepositoryImpl;
     }
 
