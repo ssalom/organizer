@@ -5,8 +5,7 @@ import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.stereotype.Component;
 
 @Component
-public interface UserDAO extends ListCrudRepository<User, String> {
-
+public interface UserDao extends ListCrudRepository<User, String> {
     Boolean existsByEmail(String email);
-
 }
+

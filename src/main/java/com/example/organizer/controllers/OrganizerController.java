@@ -1,7 +1,6 @@
 package com.example.organizer.controllers;
 
 import com.example.organizer.entities.User;
-import com.example.organizer.repositories.UserRepositoryImpl;
 import com.example.organizer.services.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class UserController {
+public class OrganizerController {
 
     private final UserService userService;
 
-    public UserController(UserService userService) {
+    public OrganizerController(UserService userService) {
         this.userService = userService;
     }
 
