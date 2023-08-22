@@ -13,12 +13,7 @@ public class Item {
     private String itemID;
 
     private String userId;
-    private String userName;
     private String title;
     private String description;
-    private ZonedDateTime startDate;
-    private ZonedDateTime dueDate;
-    private boolean recurring;
-    private String interval;
 
 }

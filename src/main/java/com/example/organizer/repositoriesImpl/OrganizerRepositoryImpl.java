@@ -7,6 +7,7 @@ import com.example.organizer.entities.User;
 import com.example.organizer.repositories.OrganizerRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -20,7 +21,7 @@ public class OrganizerRepositoryImpl implements OrganizerRepository {
         this.itemDao = itemDao;
     }
 
-    public Boolean isUserExistingByEmail(String email) {
+    public boolean isUserExistingByEmail(String email) {
             return userDAO.existsByEmail(email);
     }
 
@@ -32,7 +33,14 @@ public class OrganizerRepositoryImpl implements OrganizerRepository {
     @Override
     public boolean updateUser(User user) {
         userDAO.save(user);
-        return false;
+        return true;
+    }
+
+    public List<User> getUsers() { return userDAO.findAll().stream().toList();}
+
+    public boolean deletedUserById(String userID) {
+        userDAO.deleteById(userID);
+        return true;
     }
 
     @Override
@@ -42,18 +50,17 @@ public class OrganizerRepositoryImpl implements OrganizerRepository {
     }
 
     @Override
-    public boolean removeItemById(String id) {
+    public boolean deleteItemById(String id) {
         itemDao.deleteById(id);
         return true;
     }
 
-    @Override
-    public boolean getItemById(String id) {
-        return false;
+    public Optional<Item> getItemById(String id) {
+        return itemDao.findById(id);
     }
 
-    @Override
-    public Optional<Item> getItemByUserId(String userId) {
+    public List<Item> getItemByUserId(String userId) {
         return itemDao.findByUserId(userId);
     }
+
 }
